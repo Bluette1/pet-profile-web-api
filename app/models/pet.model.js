@@ -8,14 +8,13 @@ const Pet = mongoose.model(
     sex: String,
     weight: Number,
     color: String,
-    missing:{
+    missing: {
       type: Boolean,
       default: false,
     },
-    img:{
-        data: Buffer,
-        contentType: String
-    }
+    image: {
+      type: String,
+    },
   })
 );
 

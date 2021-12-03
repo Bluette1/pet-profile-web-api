@@ -24,7 +24,7 @@ To get a local copy up and running follow these simple example steps.
 - Git clone this repo.
 - Inside the project's root folder
 
-- Create a `.env` file in the root repository of the project and paste the following according to the `.env_example`.
+- Create a `.env` file in the root repository of the project according to the `.env_example` file.
 
 Run the following commands to start the application:
 
