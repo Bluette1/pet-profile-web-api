@@ -30,6 +30,44 @@ exports.addPet = async (req, res) => {
   });
 };
 
+exports.updatePet = async (req, res) => {
+  const {id} = req.params
+  const { name, age, sex, weight, color, missing, image} = req.body;
+  let img = image;
+  if (req.file) {
+    img = req.file.location;
+  }
+  const pet = {
+    name,
+    age,
+    sex,
+    weight,
+    color,
+    missing,
+    image: img,
+  };
+
+  Pet.findByIdAndUpdate(id, pet).exec((err, pet) => {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
+    }
+    res.send(pet);
+  });
+};
+
+
+exports.getOwnPets = (req, res) => {
+  const userId = req.userId;
+  User.findById(userId).exec((err, user) => {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
+    }
+    res.send(user.pets);
+  });
+};
+
 exports.getPets = (req, res) => {
   Pet.find({}).exec((err, pets) => {
     if (err) {
