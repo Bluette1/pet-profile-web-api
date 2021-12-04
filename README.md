@@ -30,7 +30,7 @@ Run the following commands to start the application:
 
 ```
 yarn install
-yarn dev
+yarn start
 
 ```
 

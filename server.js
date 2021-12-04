@@ -1,7 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const dbConfig = require("./app/config/db.config");
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }

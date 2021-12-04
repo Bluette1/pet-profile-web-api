@@ -3,10 +3,13 @@ const controller = require('../controllers/pet.controller');
 const multer = require('multer');
 const aws = require('aws-sdk');
 const multerS3 = require('multer-s3');
-const s3 = new aws.S3();
+
 const DIR = __dirname +'/uploads/';
 
-aws.config.update({
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+const s3 = new aws.S3({
   secretAccessKey: process.env.S3_ACCESS_SECRET,
   accessKeyId: process.env.S3_ACCESS_KEY,
   region: process.env.S3_REGION,
