@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 const db = require("./app/models");
 const MONGODB_URI = process.env.MONGODB_URI;
 db.mongoose
-  .connect(`${MONGODB_URI}`, {
+  .connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })

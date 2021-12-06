@@ -1,9 +1,15 @@
 // In this file you can configure migrate-mongo
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
+const MONGODB_URI = process.env.MONGODB_URI;
+
 const config = {
   mongodb: {
     // TODO Change (or review) the url to your MongoDB:
-    url: "mongodb://localhost:27017",
+    url: MONGODB_URI,
 
     // TODO Change this to your database name:
     databaseName: "pet_profile_db",
