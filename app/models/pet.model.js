@@ -15,6 +15,10 @@ const Pet = mongoose.model(
     image: {
       type: String,
     },
+    available_for_adoption: {
+      type: Boolean,
+      default: false,
+    }
   })
 );
 
