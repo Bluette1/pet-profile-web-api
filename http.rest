@@ -1,0 +1,29 @@
+POST http://localhost:8080/api/auth/signup HTTP/1.1
+content-type: application/json
+
+{
+    "username": "test",
+    "email": "test@example.com",
+    "password": "password"
+}
+
+###
+
+GET http://localhost:8080/api/public
+
+###
+
+POST http://localhost:8080/api/auth/signin HTTP/1.1
+content-type: application/json
+
+{
+    "username": "test",
+    "password": "password"
+}
+
+###
+
+GET http://localhost:8080/api/user
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTQwYTU3YWYwZDNlMWYxNmYzMjRiNSIsImlhdCI6MTYzODE0MTAyMiwiZXhwIjoxNjM4MjI3NDIyfQ.Nvq19fP2OW2B4GO4unxGQ0yrcAL5FCpztNNM4LSo37M
+
+###
