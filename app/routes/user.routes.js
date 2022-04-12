@@ -12,6 +12,6 @@ module.exports = function(app) {
 
   app.get("/api/public", controller.allAccess);
 
-  app.get("/api/user", [verifyToken], controller.userBoard);
+  app.get("/api/users/:id", [verifyToken], controller.userBoard);
 
 };

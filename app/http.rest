@@ -1,0 +1,23 @@
+POST http://localhost:8080/api/auth/signin HTTP/1.1 
+content-type: application/json
+
+{
+"username": "test", "password": "password"
+}
+
+###
+
+GET http://localhost:8080/api/pets HTTP/1.1 
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYWFjYzlkMGMyNzJkMjY5M2NjOWRkYyIsImlhdCI6MTY0OTY1Njg1MywiZXhwIjoxNjQ5NzQzMjUzfQ.FgL-6Jq1Pjp2yGkDNd3LVnJ_oA0lLPOxyfBWgyvWneI
+
+###
+
+GET http://localhost:8080/api/pets/61aaea27b176431fb16cb592 HTTP/1.1 
+content-type: application/json
+
+###
+
+GET http://localhost:8080/api/users/61aacc9d0c272d2693cc9ddc HTTP/1.1 
+content-type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYWFjYzlkMGMyNzJkMjY5M2NjOWRkYyIsImlhdCI6MTY0OTY1Nzg1OCwiZXhwIjoxNjQ5NzQ0MjU4fQ.PTihIBLYTByIBpbn_XlrIITkvmf8z1Ksuab7QCEqK0o

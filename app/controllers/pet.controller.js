@@ -79,6 +79,7 @@ exports.getPets = (req, res) => {
 };
 
 exports.getPet = (req, res) => {
+  const { id } = req.params;
   Pet.findById(id).exec((err, pet) => {
     if (err) {
       res.status(500).send({ message: err });
