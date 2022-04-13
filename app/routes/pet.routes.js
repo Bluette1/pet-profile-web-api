@@ -39,7 +39,7 @@ module.exports = function (app) {
   });
 
   app.get("/api/pets", controller.getPets);
-  app.get("/api/user/:id/pets", [verifyToken], controller.getOwnPets);
+  app.get("/api/users/:id/pets", [verifyToken], controller.getOwnPets);
   app.get("/api/pets/:id", controller.getPet);
   app.put(
     "/api/pets/:id",
