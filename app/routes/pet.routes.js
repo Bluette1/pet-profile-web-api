@@ -39,10 +39,10 @@ module.exports = function (app) {
   });
 
   app.get("/api/pets", controller.getPets);
-  app.get("/api/user/pets", [verifyToken], controller.getOwnPets);
-  app.get("/api/pet", controller.getPet);
+  app.get("/api/user/:id/pets", [verifyToken], controller.getOwnPets);
+  app.get("/api/pets/:id", controller.getPet);
   app.put(
-    "/api/pet/:id",
+    "/api/pets/:id",
     upload.single("image"),
     [verifyToken],
     controller.updatePet
